@@ -34,7 +34,7 @@ class Comments extends \yii\db\ActiveRecord
             [['user_id'], 'integer'],
             [['comment'], 'string'],
             [['created_at'], 'safe'],
-            [['user_id'], 'exist', 'skipOnError' => true, 'targetClass' => Users::className(), 'targetAttribute' => ['user_id' => 'id']],
+            [['user_id'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['user_id' => 'id']],
         ];
     }
 
