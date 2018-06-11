@@ -11,6 +11,15 @@ $config = [
         '@bower' => '@vendor/bower-asset',
         '@npm'   => '@vendor/npm-asset',
     ],
+    'modules' => [
+        'user' => [
+            'class' => 'dektrium\user\Module',
+            'enableUnconfirmedLogin' => true,
+            'confirmWithin' => 21600,
+            'cost' => 12,
+            'admins' => ['admin']
+        ],
+    ],
     'components' => [
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
