@@ -19,10 +19,14 @@ class AppAsset extends AssetBundle
 {
     public $basePath = '@webroot';
     public $baseUrl = '@web';
+    public $jsOptions = [
+        'position' => View::POS_HEAD
+    ];
     public $css = [
         'css/site.css',
     ];
     public $js = [
+        'http://code.jquery.com/jquery-1.10.1.min.js',
     ];
     public $depends = [
         'yii\web\YiiAsset',
