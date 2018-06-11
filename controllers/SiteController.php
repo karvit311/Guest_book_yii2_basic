@@ -9,6 +9,8 @@ use yii\web\Response;
 use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
+use app\models\Comments;
+use app\models\User;
 
 class SiteController extends Controller
 {
@@ -61,6 +63,20 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
+        $form_model = new Comments();
+        $request = Yii::$app->request; 
+        if ($form_model->load(Yii::$app->request->post())) {
+            if(!Yii::$app->user->isGuest ){
+                $user_id = Yii::$app->user->getId();
+            }else{
+                $user_id = 0;
+            }
+            $form_model->user_id = $user_id;
+            $comment = $request->post('Comments')['comment'];
+            $form_model->comment = $comment;
+            $form_model->save(false);
+            Yii::$app->getSession()->setFlash('success', 'Your comment has been successfully recorded.');
+        }
         return $this->render('index');
     }
 
