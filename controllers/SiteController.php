@@ -12,7 +12,7 @@ use app\models\ContactForm;
 use app\models\Comments;
 use dektrium\user\models\User;
 
-class SiteController extends \dektrium\user\controllers\SecurityController
+class SiteController extends Controller
 {
     /**
      * {@inheritdoc}
