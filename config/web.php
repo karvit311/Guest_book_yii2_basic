@@ -26,6 +26,10 @@ $config = [
             'cookieValidationKey' => 'Ob2bwFE6iG_pVzuvdcih1hfEM18Vc_y4',
             'enableCsrfValidation' => false,
         ],
+        'user' => [
+            'class' => 'app\components\User',
+            'identityClass' => 'dektrium\user\models\User',
+        ],
         'cache' => [
             'class' => 'yii\caching\FileCache',
         ],
